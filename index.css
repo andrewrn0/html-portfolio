@@ -2,14 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Roboto";
-  src: url("./assets/Roboto.woff2") format("woff2"),
-    url("./assets/Roboto.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
   font-family: "Roboto", sans-serif;
+}
+
+#avatar {
+  background-image: url("/assets/me.jpeg");
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  background-size: 275%;
+  background-position: 48% 52%;
 }
