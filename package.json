@@ -1,10 +1,8 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.4.10"
-  },
   "name": "website",
   "version": "1.0.0",
-  "description": "My personal website",
+  "description": "personal website",
+  "type":"module",
   "main": "index.html",
   "dependencies": {
     "ansi-regex": "^6.0.1",
@@ -97,8 +95,12 @@
     "wrap-ansi-cjs": "^7.0.0",
     "yaml": "^2.5.0"
   },
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./public/input.css -o ./public/output.css --watch"
   },
   "author": "Andrew Noble",
   "license": "ISC"
