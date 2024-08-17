@@ -1,0 +1,79 @@
+:root {
+  --bg-color: #fff;
+  --text-color: #333;
+  --heading-color: green;
+  --toggle-bg: #ddd;
+  --toggle-bg-checked: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #333;
+    --text-color: #fff;
+    --heading-color: darkOrange;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  margin: 0;
+  min-height: 100vh;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+main,
+footer,
+header {
+  justify-self: center;
+  margin: 0.5rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  max-width: 60%;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+li {
+  margin: 1em;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+}
+
+#avatar {
+  background-image: url("../assets/me.jpeg");
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  background-size: 275%;
+  background-position: 48% 52%;
+}
