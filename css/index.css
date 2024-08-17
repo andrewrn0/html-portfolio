@@ -1,63 +1,72 @@
+/* Variables */
 :root {
-  --bg-color: #fff;
-  --text-color: #333;
-  --heading-color: green;
-  --toggle-bg: #ddd;
-  --toggle-bg-checked: #333;
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #333;
+  --color-green: green;
+  --color-dark-orange: darkOrange;
+  --color-light-gray: #ddd;
+
+  /* Fonts */
+  --font-family: "Roboto", sans-serif;
+  --font-size-base: 1rem;
+  --font-size-large: 1.25rem;
+
+  /* Layouts */
+  --max-width: 60%;
+  --margin: 0.5rem;
 }
 
+/* Theme: Light */
+:root {
+  --bg-color: var(--color-white);
+  --text-color: var(--color-black);
+  --heading-color: var(--color-green);
+  --toggle-bg: var(--color-light-gray);
+  --toggle-bg-checked: var(--color-black);
+}
+
+/* Theme: Dark */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #333;
-    --text-color: #fff;
-    --heading-color: darkOrange;
+    --bg-color: var(--color-black);
+    --text-color: var(--color-white);
+    --heading-color: var(--color-dark-orange);
   }
 }
 
+/* Base Styles */
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-family);
   display: grid;
   grid-template-rows: auto 1fr auto;
   margin: 0;
   min-height: 100vh;
-
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: all 0.3s ease;
 }
 
-main,
+main {
+  max-width: var(--max-width);
+}
+
+header,
 footer,
-header {
+main {
   justify-self: center;
-  margin: 0.5rem;
+  margin: var(--margin);
 }
 
+/* Header Styles */
 header {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-main {
-  max-width: 60%;
-}
-
-a {
-  color: inherit;
-}
-
-a:hover {
-  color: orange;
-  text-decoration: underline;
-}
-
-li {
-  margin: 1em;
-}
-
+/* Typography */
 p {
-  font-size: 1.25rem;
+  font-size: var(--font-size-large);
 }
 
 h1,
@@ -69,6 +78,22 @@ h6 {
   color: var(--heading-color);
 }
 
+/* Links */
+a {
+  color: inherit;
+
+  &:hover {
+    color: orange;
+    text-decoration: underline;
+  }
+}
+
+/* List Items */
+li {
+  margin: 1em;
+}
+
+/* Avatar */
 #avatar {
   background-image: url("../assets/me.jpeg");
   width: 175px;
